@@ -1,0 +1,7 @@
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe
+
+bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic my-topic
+"Hola AMQ Streams "
+
+//leer el mensaje
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-topic --from-beginning
