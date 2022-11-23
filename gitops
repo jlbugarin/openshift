@@ -1,1 +1,15 @@
+--
+oc get pods -n openshift-console | grep console
+
+--saber ruta de la consola
+oc get routes console -n openshift-console
+
+--instalar operador
+openshift pipelines (con eso usamos tekton)
+
+--creamos un projecto
+oc new-project pipelines-tutorial
+
+
+
 
