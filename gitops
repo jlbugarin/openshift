@@ -12,6 +12,9 @@ oc new-project pipelines-tutorial
 
 oc apply -f https://github.com/jlbugarin/openshift/blob/master/ocp-pipelines.yaml 
 
+--listar tareas con tekton
+tkn task list
+
 tkn task start --showlog hello
 
 oc create -f https://raw.githubusercontent.com/openshift-labs/learn-katacoda/master/middleware/pipelines/assets/tasks/apply_manifest_task.yaml
@@ -23,6 +26,15 @@ oc create -f https://raw.githubusercontent.com/openshift-labs/learn-katacoda/mas
 
 --crear el pipeline con las tareas anteriores
 oc create -f https://raw.githubusercontent.com/openshift-labs/learn-katacoda/master/middleware/pipelines/assets/pipeline/pipeline.yaml
+
+oc create -f https://raw.githubusercontent.com/openshift-labs/learn-katacoda/master/middleware/pipelines/assets/pipeline/pipeline.yaml
+
+--ejecutar el pipeline
+--backend
+tkn pipeline start build-and-deploy -w name=shared-workspace,claimName=source-pvc -p deployment-name=pipelines-vote-api -p git-url=https://github.com/openshift/pipelines-vote-api.git -p IMAGE=image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/vote-api -p git-revision=master --showlog
+--frontend
+tkn pipeline start build-and-deploy -w name=shared-workspace,claimName=source-pvc -p deployment-name=pipelines-vote-ui -p git-url=https://github.com/openshift/pipelines-vote-ui.git -p IMAGE=image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/vote-ui -p git-revision=master --showlog
+
 
 
 
