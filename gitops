@@ -10,6 +10,20 @@ openshift pipelines (con eso usamos tekton)
 --creamos un projecto
 oc new-project pipelines-tutorial
 
+oc apply -f https://github.com/jlbugarin/openshift/blob/master/ocp-pipelines.yaml 
+
+tkn task start --showlog hello
+
+oc create -f https://raw.githubusercontent.com/openshift-labs/learn-katacoda/master/middleware/pipelines/assets/tasks/apply_manifest_task.yaml
+
+
+oc create -f https://raw.githubusercontent.com/openshift-labs/learn-katacoda/master/middleware/pipelines/assets/tasks/update_deployment_task.yaml
+
+oc create -f https://raw.githubusercontent.com/openshift-labs/learn-katacoda/master/middleware/pipelines/assets/resources/persistent_volume_claim.yaml
+
+--crear el pipeline con las tareas anteriores
+oc create -f https://raw.githubusercontent.com/openshift-labs/learn-katacoda/master/middleware/pipelines/assets/pipeline/pipeline.yaml
+
 
 
 
