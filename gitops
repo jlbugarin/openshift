@@ -43,6 +43,8 @@ oc policy add-role-to-user registry-editor kubeadmin
 https://access.redhat.com/solutions/6964710 
 
 
-
+--
+https://console-openshift-console.apps.wncg39dy.eastus.aroapp.io/topology/ns/buga-ocp-pipelines?view=graph
+kgj6T-Xda8i-buyfx-xLn3T*
 
 
