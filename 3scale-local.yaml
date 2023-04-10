@@ -1,0 +1,8 @@
+apiVersion: apps.3scale.net/v1alpha1
+kind: APIManager
+metadata:
+   name: apimanager
+   namespace: 3scale
+spec:
+  wildcardDomain: apps-crc.testing
+  resourceRequirementsEnabled: false
