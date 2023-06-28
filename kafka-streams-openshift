@@ -1,3 +1,4 @@
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
 bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe
 
 bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic my-topic
